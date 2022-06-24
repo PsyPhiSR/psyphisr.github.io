@@ -11,8 +11,10 @@ All files should be committed to the repo so that they are available to github p
 # Todo
 - Build out SCSS theme
   - set this up to allow each page to provide a simple override to the main theme,
-  so that while all pages are using the same SCSS they appearance may differ, for
+  so that while all pages are using the same SCSS their appearance may differ, for
   example, the colour palette for each page may vary. 
+- Create a basic web page structure
+- Build out a bit of content for a few pages
 
 # Changelog
 ## Initial project set-up
