@@ -1,0 +1,80 @@
+@use "../theme" as *;
+
+button {
+  background-color: transparent;
+  border-color: transparent;
+  padding: calc($padding / 2) $padding;
+  border-radius: 6px;
+  transition-duration: 0.4s;
+  &:focus {
+    outline: 4px double $primary;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  &:active {
+
+  }
+}
+button[text] {
+  padding: revert;
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+    animation: none;
+  }
+  &:hover {
+    color: $neutral-dark;
+    background-color: $neutral;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+}
+
+button[outlined] {
+  background-color: transparent;
+  border-color: $neutral;
+  &[primary] {
+    border-color: $primary; 
+    &:hover {
+      border-color: $secondary;
+    }
+  }
+  &[secondary] {
+    border-color: $secondary;
+  }
+  &:hover {
+    border-color: $primary;
+  }
+}
+
+button[contained]{
+  border-color: $neutral;
+  background-color: $neutral;
+  &[primary] {
+    background-color: $primary; 
+    border-color: $primary;
+    &:hover {
+      background-color: $secondary;
+      border-color: $secondary;
+    }
+  }
+  &[secondary] {
+    background-color: $secondary;
+    border-color: $secondary;
+  }
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

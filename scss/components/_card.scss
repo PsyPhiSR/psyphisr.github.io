@@ -1,0 +1,8 @@
+@use "../theme" as *;
+
+.card {
+  padding: calc(var(--padding) / 2);
+  border: 1px solid $neutral-dark;
+  border-radius: $border-radius;
+  box-shadow: 2px 4px 5px -2px #00000020;
+}

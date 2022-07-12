@@ -1,0 +1,27 @@
+@use "sass:color";
+
+$primary: #a0ffa0;
+$secondary: complement($primary);
+$background: #fff;
+$neutral: adjust-color($background, $lightness: -10%);
+$neutral-dark: adjust-color($background, $lightness: -50%);
+
+$theme: (
+  primary: $primary,
+  secondary: $secondary,
+  paper: $background,
+  neutral: $neutral,
+  neutral-dark: $neutral-dark,
+);
+
+@each $label, $color in $theme {
+  .bg-#{$label} {
+    background-color: $color;
+  }
+}
+
+@each $label, $color in $theme {
+  .#{$label} {
+    color: $color;
+  }
+}

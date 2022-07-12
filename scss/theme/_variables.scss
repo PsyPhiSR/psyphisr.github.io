@@ -1,0 +1,42 @@
+// random stuff
+$golden-ratio: 0.618;
+$golden-ratio-bigger: 1 + $golden-ratio;
+$golden-ratio-left: 1 - $golden-ratio;
+
+// breakpoints
+$breakpoint-tablet: 40rem;
+$breakpoint-desktop: 60rem;
+
+// content sizes
+$max-content-width: 40rem;
+$max-text-column-width: 60ch;
+$max-title-width: 18ch;
+$sidebar-width: 10rem;
+$grid-min-size: 10rem;
+$flex-min-size: 10rem;
+$flex-max-size: 20rem;
+
+// general padding
+$padding: 1rem;
+$inner-padding: 4rem;
+$outer-padding: $inner-padding * $golden-ratio-bigger;
+$nav-item-padding: 1rem;
+$list-item-padding: 1rem;
+
+// dividers
+$divider-size: 2px;
+
+$border-radius: .5rem;
+
+:root {
+  --padding: #{$padding};
+  --margin: #{$padding};
+  --grid-column-width: #{$grid-min-size};
+  --flex-column-width: #{$flex-min-size};
+  --max-content-width: #{$max-content-width};
+
+  @media only screen and (min-width: #{$breakpoint-desktop}) {
+    --padding: calc(#{$padding} * 2);
+    --margin: calc(#{$padding} * 2);
+  }
+}
