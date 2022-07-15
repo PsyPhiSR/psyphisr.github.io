@@ -1,0 +1,105 @@
+:root {
+  --clr--primary: #c0c0ff;
+  --clr--primary-dark: #606080;
+  --clr--neutral: #ddd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+p {
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+blockquote {
+  border-left: 4px solid var(--clr--primary);
+  padding-inline: 2rem;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 50vh;
+  width: 100vw;
+  font-size: 4em;
+  background-image: 
+    url("../images/building.jpg");
+  background-size: cover;
+  background-color: #000;
+}
+
+.hero h1 {
+  flex-grow: 1;
+  color: #fff;
+}
+
+main {
+  margin: 10vmin auto;
+  max-width: 60rem;
+}
+
+section {
+  margin-block: 10vmin;
+  padding-inline: 2rem;
+}
+
+.flex {
+  display: flex;
+  min-height: 20vmin;
+}
+
+.outline {
+  outline: 1px solid red;
+}
+
+.item {
+  outline: 1px solid red;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.sideways {
+  writing-mode: vertical-rl;
+  text-orientation:sideways;
+}
+
+.big {
+  font-size: 2em;
+}
+
+.grid {
+  min-height: 20vmin;
+  display: grid;
+}
+
+.gap {
+  gap: 2rem;
+}
+
+.columns {
+  flex-direction: column;
+}
+
+.grow>* {
+  flex-grow: 1;
+}
+
+.bigger ul {
+  font-size: 1.5em;
+}

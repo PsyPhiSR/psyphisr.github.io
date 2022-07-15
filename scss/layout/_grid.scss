@@ -47,10 +47,11 @@
 }
 
 .flex-columns {
-  --multipier: calc(var(--max-content-width) - 100%);
+  --target-width: #{$max-content-width};
   > * {
     max-width: 100%;
-    flex: 1 0 calc(var(--multipier) * 999);
+    flex-grow: 1;
+    flex-basis: calc((var(--target-width) - 100%) * 999);
   }
 }
 

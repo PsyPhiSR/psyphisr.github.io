@@ -1,0 +1,119 @@
+:root {
+  --clr--primary: #c0c0ff;
+  --clr--primary-dark: #606080;
+  --clr--neutral: #ddd;
+}
+html {
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+p {
+  font-weight: 400;
+}
+
+button {
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 2em;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("./images/beach.jpg");
+  background-size: cover;
+}
+
+.hero h1 {
+  flex-grow: 1;
+  color: #000;
+  animation: waves 5s ease-in-out infinite;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid black;
+  animation: bounce 3s ease-in-out infinite;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+@keyframes waves {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  70% {
+    transform: translateY(1rem);
+  }
+}
+
+main {
+  margin: 10vmin auto;
+  max-width: 60rem;
+}
+
+main .grid {
+  display: grid;
+  gap: clamp(2rem, 8vmin, 6rem);
+  counter-reset: session;
+}
+
+details {
+  counter-increment: session;
+}
+
+summary {
+  padding: 1rem 2rem;
+  background-color: var(--clr--neutral);
+  border-radius: 8px;
+}
+
+summary h3 {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+summary h3::before {
+  content: "Session " counter(session) " - ";
+}
+
+details .content {
+  margin-inline: 2rem;
+}

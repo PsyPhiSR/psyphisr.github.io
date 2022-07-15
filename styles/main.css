@@ -117,11 +117,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .flex-columns {
-  --multipier: calc(var(--max-content-width) - 100%);
+  --target-width: 40rem;
 }
 .flex-columns > * {
   max-width: 100%;
-  flex: 1 0 calc(var(--multipier) * 999);
+  flex-grow: 1;
+  flex-basis: calc((var(--target-width) - 100%) * 999);
 }
 
 .flex-pancake > * {

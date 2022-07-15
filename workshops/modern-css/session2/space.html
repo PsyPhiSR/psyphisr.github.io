@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern CSS Workshop - Space</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <a href="../index.html">
+        <h1>Space</h1>
+      </a>
+    </header>
+    <main>
+      <section class="units">
+        <h2>Alternatives to px</h2>
+        <h3>With normal font size</h3>
+        <div class="flex">
+          <div class="item sideways" style="width: 100px">
+            <p>100px</p>
+          </div>
+          <div class="item sideways" style="width: 10%">
+            <p>10%</p>
+          </div>
+          <div class="item sideways" style="width: 10rem">
+            <p>10rem</p>
+          </div>
+          <div class="item sideways" style="width: 10em">
+            <p>10em</p>
+          </div>
+          <div class="item sideways" style="width: 10ex">
+            <p>10ex</p>
+          </div>
+          <div class="item sideways" style="width: 10ch">
+            <p>10ch</p>
+          </div>
+        </div>
+        <blockquote>
+          Note that rem and em are the same size both based on 16px base font
+          size. ex is the x-height of the current font
+          <i>(fonts of the same font size can have different x-heights)</i>. ch
+          is width of the "0" (zero).
+        </blockquote>
+        <div class="flex gap">
+          <div>
+            <h4 style="width: 20ch">Using ch units</h4>
+            <p style="width: 40ch">
+              Header has 20ch and this paragraph has 40ch. Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Cupiditate velit error soluta
+              ad vitae reiciendis vero. Libero quis, vitae enim error assumenda
+              optio quisquam dolore quos, a sint nisi atque, iste repudiandae.
+              Qui beatae, eaque praesentium iure laborum expedita incidunt amet
+              quisquam magnam ex est tempora, vel cupiditate consequuntur nisi,
+              rem alias. In, nostrum consequuntur. Iste id voluptatibus
+              perferendis quod quae accusamus molestiae tenetur! Aperiam
+              possimus excepturi quis totam! Delectus aliquam, vel dolorum nisi
+              magnam labore in, aliquid eaque suscipit modi cumque dolorem
+              laudantium tempora beatae, laboriosam ad provident eius
+              perferendis. Unde aliquid totam laboriosam odit. Ex aliquam
+              architecto suscipit?
+            </p>
+          </div>
+          <div>
+            <h4 style="width: 20ch">Using ch units</h4>
+            <p style="width: 40ch; overflow-wrap: normal; hyphens: auto">
+              Header has 20ch and this paragraph has 40ch. Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Cupiditate velit error soluta
+              ad vitae reiciendis vero. Libero quis, vitae enim error assumenda
+              optio quisquam dolore quos, a sint nisi atque, iste repudiandae.
+              Qui beatae, eaque praesentium iure laborum expedita incidunt amet
+              quisquam magnam ex est tempora, vel cupiditate consequuntur nisi,
+              rem alias. In, nostrum consequuntur. Iste id voluptatibus
+              perferendis quod quae accusamus molestiae tenetur! Aperiam
+              possimus excepturi quis totam! Delectus aliquam, vel dolorum nisi
+              magnam labore in, aliquid eaque suscipit modi cumque dolorem
+              laudantium tempora beatae, laboriosam ad provident eius
+              perferendis. Unde aliquid totam laboriosam odit. Ex aliquam
+              architecto suscipit?
+            </p>
+          </div>
+        </div>
+        <blockquote>
+          Note that in the first one the right margin is very jagged. Adding
+          overflow-wrap and hyphens improves this. Good values for titles are
+          between 18-32ch and for paragraphs 40-80ch, depending on requirements.
+        </blockquote>
+        <h3>With double font size</h3>
+        <div class="flex big">
+          <div class="item sideways" style="width: 100px">
+            <p>100px</p>
+          </div>
+          <div class="item sideways" style="width: 10%">
+            <p>10%</p>
+          </div>
+          <div class="item sideways" style="width: 10rem">
+            <p>10rem</p>
+          </div>
+          <div class="item sideways" style="width: 10em">
+            <p>10em<sup>*</sup></p>
+          </div>
+          <div class="item sideways" style="width: 10ex">
+            <p>10ex<sup>*</sup></p>
+          </div>
+          <div class="item sideways" style="width: 10ch">
+            <p>10ch<sup>*</sup></p>
+          </div>
+        </div>
+        <blockquote>
+          <sup>*</sup>Notice how some units change with the font size of the
+          parent. They also compound. I use this for the Hero section at the top
+          of the page.
+        </blockquote>
+        <div>
+          <ul class="bigger">
+            <li>Normal</li>
+            <ul>
+              <li>Bigger</li>
+              <ul>
+                <li>And Again</li>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+        <h3>On smaller parent</h3>
+        <div class="flex" style="width: 50%">
+          <div class="item sideways" style="width: 100px">
+            <p>100px</p>
+          </div>
+          <div class="item sideways" style="width: 10%">
+            <p>10%<sup>*</sup></p>
+          </div>
+          <div class="item sideways" style="width: 10rem">
+            <p>10rem</p>
+          </div>
+        </div>
+        <blockquote>
+          <sup>*</sup>Percentages are based on the size of the parent.
+        </blockquote>
+        <h3>Viewport</h3>
+        <div class="flex">
+          <div class="item sideways" style="width: 10vh">
+            <p>10vh</p>
+          </div>
+          <div class="item sideways" style="width: 10vw">
+            <p>10vw</p>
+          </div>
+          <div class="item sideways" style="width: 10vmin">
+            <p>10vmin</p>
+          </div>
+          <div class="item sideways" style="width: 10vmax">
+            <p>10vmax</p>
+          </div>
+        </div>
+        <h3>Content based</h3>
+        <div class="flex columns">
+          <h4>Fit content acts like stretch (parent has max width)</h4>
+          <div class="item" style="max-width: 10rem">
+            <p style="width: fit-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="item" style="width: fit-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <blockquote>
+            It will only expand to the max-content width. See below.
+          </blockquote>
+          <h4>Min content</h4>
+          <div class="item" style="width: min-content">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <h4>Max content</h4>
+          <div class="item" style="width: max-content">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </section>
+      <section class="calculations">
+        <h2>Calculations</h2>
+        <div class="flex columns" style="outline: 1px solid red">
+          <div class="item" style="width: calc(9rem + 16px)">
+            <p>Calc 9rem + 16px</p>
+          </div>
+          <div class="item" style="width: calc(10rem + 50%)">
+            <p>Calc 10rem + 10%</p>
+          </div>
+          <div class="item" style="width: min(20%, 10rem)">
+            <p>Min 20%, 10rem</p>
+          </div>
+          <div class="item" style="width: min(100%, 40rem)">
+            <p>Min 100%, 40rem</p>
+          </div>
+          <div class="item" style="width: max(100%, 20rem)">
+            <p>Max 100%, 20rem</p>
+          </div>
+          <div class="item" style="width: max(50%, 10rem)">
+            <p>Max 50%, 10rem</p>
+          </div>
+          <div class="item" style="width: clamp(10rem, 50%, 20rem)">
+            <p>Clamp 10rem, 50%, 20rem</p>
+          </div>
+        </div>
+        <blockquote>
+          <sup>*</sup>At smaller sizes many of these will overflow the parent.
+        </blockquote>
+      </section>
+      <section class="grids">
+        <h2>Grids</h2>
+        <h3>Grid 1fr</h3>
+        <div class="grid" style="grid-template-columns: repeat(3, 1fr)">
+          <div class="item">
+            <p>1fr</p>
+          </div>
+          <div class="item">
+            <p>1fr</p>
+          </div>
+          <div class="item">
+            <p>1fr</p>
+          </div>
+        </div>
+        <h3>Grid auto fit</h3>
+        <div
+          class="grid"
+          style="grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))"
+        >
+          <div class="item">
+            <p>auto</p>
+          </div>
+          <div class="item">
+            <p>auto</p>
+          </div>
+          <div class="item">
+            <p>auto</p>
+          </div>
+        </div>
+        <h3>Grid auto fill</h3>
+        <div
+          class="grid"
+          style="grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr))"
+        >
+          <div class="item">
+            <p>auto</p>
+          </div>
+          <div class="item">
+            <p>auto</p>
+          </div>
+          <div class="item">
+            <p>auto</p>
+          </div>
+        </div>
+        <h3>Grid Maxmin</h3>
+        <div
+          class="grid"
+          style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
+        >
+          <div class="item">
+            <p>Minmax</p>
+          </div>
+          <div class="item">
+            <p>Minmax</p>
+          </div>
+          <div class="item">
+            <p>Minmax</p>
+          </div>
+        </div>
+        <blockquote>
+          Note that when the parent is too small to fit three columns with the
+          minimum width, one of the columns drops to the row below and the
+          columns grow to share the space available.
+        </blockquote>
+      </section>
+      <section>
+        <h2>Padding and Margin</h2>
+        <blockquote>
+          Note In the reset I am setting box sizing to border-box.
+        </blockquote>
+        <div
+          class="grid outline"
+          styles="grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))"
+        >
+          <div class="outline" style="margin-block: 2rem">margin-block</div>
+          <div class="outline" style="margin-inline: 2rem">margin-inline</div>
+          <div class="outline" style="padding-block: 2rem">padding-block</div>
+          <div class="outline" style="padding-inline: 2rem">padding-inline</div>
+          <div class="outline" style="margin-block: 2rem; padding-inline: 2rem">
+            combo
+          </div>
+          <div class="outline" style="margin-inline: 2rem; padding-block: 2rem">
+            combo
+          </div>
+          <div class="outline" style="margin: 2rem; padding: 2rem">all</div>
+        </div>
+        <h3>Gap</h3>
+        <div
+          class="grid gap outline"
+          style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
+        >
+          <div class="item">
+            <p>auto</p>
+          </div>
+          <div class="item">
+            <p>auto</p>
+          </div>
+          <div class="item">
+            <p>auto</p>
+          </div>
+          <div class="item">
+            <p>auto</p>
+          </div>
+          <div class="item">
+            <p>auto</p>
+          </div>
+          <div class="item">
+            <p>auto</p>
+          </div>
+        </div>
+        <blockquote>
+          Note There is no gap around the edge. You can specify two values to
+          change the row and column gaps.
+        </blockquote>
+      </section>
+    </main>
+    <footer>
+      <h5>Copyright &copy; 2022 Simon Filtness</h5>
+    </footer>
+  </body>
+</html>
