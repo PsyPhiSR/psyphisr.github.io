@@ -49,8 +49,7 @@ blockquote {
 }
 
 main {
-  margin: 10vmin auto;
-  max-width: 60rem;
+  padding: 4vmin;
 }
 
 section {
@@ -102,4 +101,11 @@ section {
 
 .bigger ul {
   font-size: 1.5em;
+}
+
+main > article {
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
+  overflow: auto;
+  position: relative;
+  resize: both;
 }

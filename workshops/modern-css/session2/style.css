@@ -9,16 +9,18 @@
 }
 
 html {
-  font-family: "Quicksand", sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 body {
   margin: 0;
   line-height: 1.5;
+  overscroll-behavior: none;
 }
 
 p {
   font-weight: 400;
+  max-width: 80ch;
 }
 
 a {
@@ -26,8 +28,18 @@ a {
 }
 
 blockquote {
+  display: block;
   border-left: 4px solid var(--clr--primary);
   padding-inline: 2rem;
+  max-width: 80ch;
+}
+
+body > .hero {
+  font-size: 4em;
+}
+
+main > .hero {
+  font-size: 2rem;
 }
 
 .hero {
@@ -36,9 +48,6 @@ blockquote {
   place-items: center;
   height: 50vh;
   width: 100vw;
-  font-size: 4em;
-  background-image: 
-    url("../images/space.jpg");
   background-size: cover;
   background-color: #000;
 }
@@ -49,18 +58,32 @@ blockquote {
 }
 
 main {
-  margin: 10vmin auto;
-  max-width: 60rem;
+  margin-bottom: 5vmin;
+  display: grid;
+  grid-template-columns: 1fr min(90rem, (100% - 2rem)) 1fr;
+}
+
+main > * {
+  grid-column: 2;
+}
+
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / -1;
 }
 
 section {
-  margin-block: 10vmin;
-  padding-inline: 2rem;
+  margin-block: 5vmin;
+}
+
+section > :where(h2, h3, h4) {
+  margin-top: 4em;
 }
 
 .flex {
   display: flex;
   min-height: 20vmin;
+  margin-block: 2rem;
 }
 
 .outline {
@@ -68,7 +91,6 @@ section {
 }
 
 .item {
-  outline: 1px solid red;
   display: grid;
   place-items: center;
   text-align: center;
@@ -76,7 +98,7 @@ section {
 
 .sideways {
   writing-mode: vertical-rl;
-  text-orientation:sideways;
+  text-orientation: sideways;
 }
 
 .big {
@@ -86,6 +108,42 @@ section {
 .grid {
   min-height: 20vmin;
   display: grid;
+  margin-block: 2rem;
+}
+
+.font-example {
+  display: grid;
+  height: min-content;
+  grid-template-columns: min-content min-content min-content min-content; 
+  line-height: 1;
+  font-size: 96px; 
+  font-weight: 400;
+  position: relative;
+  align-items: baseline;
+  gap: 1rem;
+  margin-right: 2rem;
+}
+.font-example :nth-child(odd) {
+  font-family: Barlow;
+}
+.font-example :nth-child(even) {
+  font-family: Inter;
+}
+.font-example::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  width: 5ch;
+  height: 18px;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+}
+.font-example::after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  width: 5ch;
+  border-bottom: 1px solid red;
 }
 
 .gap {
@@ -96,8 +154,12 @@ section {
   flex-direction: column;
 }
 
-.grow>* {
+.grow > * {
   flex-grow: 1;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
 
 .bigger ul {
@@ -107,4 +169,11 @@ section {
 footer {
   display: grid;
   place-items: center;
+}
+
+.resize {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  position: relative;
+  resize: both;
 }

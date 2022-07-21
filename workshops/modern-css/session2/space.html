@@ -5,113 +5,191 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modern CSS Workshop - Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Inter:wght@400&family=Barlow:wght@400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="hero">
+    <header class="hero" style="background-image: url('../images/space.jpg')">
       <a href="../index.html">
         <h1>Space</h1>
       </a>
     </header>
     <main>
+      <header
+        class="hero full-bleed"
+        style="background-image: url('../images/space2.jpg')"
+      >
+        <h1>Lession 1 - Units</h1>
+      </header>
       <section class="units">
         <h2>Alternatives to px</h2>
-        <h3>With normal font size</h3>
+        <p>
+          As developer&apos;s we have a tendency to copy a pixel value from a
+          design and use that in the site, only to find that it does not work
+          when we switch to a different screen size. This lession explores what
+          options we have as developers to use different css units types.
+        </p>
+
+        <p>
+          Below we have a box with options available on a width parameter. In
+          the past, percentages were used to create even columns (50% for 2,
+          33.3% for 3, etc.) we will see that now we have better options for
+          this.
+        </p>
         <div class="flex">
-          <div class="item sideways" style="width: 100px">
+          <div class="item outline sideways" style="width: 100px">
             <p>100px</p>
           </div>
-          <div class="item sideways" style="width: 10%">
+          <div class="item outline sideways" style="width: 10%">
             <p>10%</p>
           </div>
-          <div class="item sideways" style="width: 10rem">
+          <div class="item outline sideways" style="width: 10rem">
             <p>10rem</p>
           </div>
-          <div class="item sideways" style="width: 10em">
+          <div class="item outline sideways" style="width: 10em">
             <p>10em</p>
           </div>
-          <div class="item sideways" style="width: 10ex">
+          <div class="item outline sideways" style="width: 10ex">
             <p>10ex</p>
           </div>
-          <div class="item sideways" style="width: 10ch">
+          <div class="item outline sideways" style="width: 10ch">
             <p>10ch</p>
           </div>
         </div>
         <blockquote>
-          Note that rem and em are the same size both based on 16px base font
-          size. ex is the x-height of the current font
-          <i>(fonts of the same font size can have different x-heights)</i>. ch
-          is width of the "0" (zero).
+          Note that rem and em are the same size, both are based on 16px base
+          font size. ex is the x-height of the current font, which is defined as
+          the height of a lowercase 'x'
+          <i>
+            (fonts of the same font size can have different x-heights. see
+            below)
+          </i>
+          ch is width of the "0" (zero).
         </blockquote>
-        <div class="flex gap">
-          <div>
-            <h4 style="width: 20ch">Using ch units</h4>
-            <p style="width: 40ch">
-              Header has 20ch and this paragraph has 40ch. Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Cupiditate velit error soluta
-              ad vitae reiciendis vero. Libero quis, vitae enim error assumenda
-              optio quisquam dolore quos, a sint nisi atque, iste repudiandae.
-              Qui beatae, eaque praesentium iure laborum expedita incidunt amet
-              quisquam magnam ex est tempora, vel cupiditate consequuntur nisi,
-              rem alias. In, nostrum consequuntur. Iste id voluptatibus
-              perferendis quod quae accusamus molestiae tenetur! Aperiam
-              possimus excepturi quis totam! Delectus aliquam, vel dolorum nisi
-              magnam labore in, aliquid eaque suscipit modi cumque dolorem
-              laudantium tempora beatae, laboriosam ad provident eius
-              perferendis. Unde aliquid totam laboriosam odit. Ex aliquam
-              architecto suscipit?
-            </p>
+        <h3>How font family affects sizes</h3>
+        <p>
+          Below shows an x in Barlow and Inter with visual guidelines at the top
+          and bottom of the Barlow x. Note how the Inter x is a little taller
+          for both lowercase and uppercase. Also the two fonts have a different
+          baseline, to align them I added align-items: baseline to the parent.
+          Try removing it to see what happens.
+        </p>
+
+        <div
+          style="
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(5, max-content);
+            margin-block: 4rem;
+          "
+        >
+          <div class="font-example">
+            <div>x</div>
+            <div>x</div>
+            <div>X</div>
+            <div>X</div>
           </div>
-          <div>
-            <h4 style="width: 20ch">Using ch units</h4>
-            <p style="width: 40ch; overflow-wrap: normal; hyphens: auto">
-              Header has 20ch and this paragraph has 40ch. Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Cupiditate velit error soluta
-              ad vitae reiciendis vero. Libero quis, vitae enim error assumenda
-              optio quisquam dolore quos, a sint nisi atque, iste repudiandae.
-              Qui beatae, eaque praesentium iure laborum expedita incidunt amet
-              quisquam magnam ex est tempora, vel cupiditate consequuntur nisi,
-              rem alias. In, nostrum consequuntur. Iste id voluptatibus
-              perferendis quod quae accusamus molestiae tenetur! Aperiam
-              possimus excepturi quis totam! Delectus aliquam, vel dolorum nisi
-              magnam labore in, aliquid eaque suscipit modi cumque dolorem
-              laudantium tempora beatae, laboriosam ad provident eius
-              perferendis. Unde aliquid totam laboriosam odit. Ex aliquam
-              architecto suscipit?
-            </p>
+          <div style="display: grid; line-height: 1">
+            <div class="item outline" style="font-family: Barlow; width: 10rem">
+              Barlow 10rem
+            </div>
+            <div class="item outline" style="font-family: Inter; width: 10rem">
+              Inter 10rem
+            </div>
+          </div>
+          <div style="display: grid; line-height: 1">
+            <div class="item outline" style="font-family: Barlow; width: 10em">
+              Barlow 10em
+            </div>
+            <div class="item outline" style="font-family: Inter; width: 10em">
+              Inter 10em
+            </div>
+          </div>
+          <div style="display: grid; line-height: 1">
+            <div class="item outline" style="font-family: Barlow; width: 15ex">
+              Barlow 15ex
+            </div>
+            <div class="item outline" style="font-family: Inter; width: 15ex">
+              Inter 15ex
+            </div>
+          </div>
+          <div style="display: grid; line-height: 1">
+            <div class="item outline" style="font-family: Barlow; width: 12ch">
+              Barlow 12ch
+            </div>
+            <div class="item outline" style="font-family: Inter; width: 12ch">
+              Inter 12ch
+            </div>
           </div>
         </div>
-        <blockquote>
-          Note that in the first one the right margin is very jagged. Adding
-          overflow-wrap and hyphens improves this. Good values for titles are
-          between 18-32ch and for paragraphs 40-80ch, depending on requirements.
-        </blockquote>
-        <h3>With double font size</h3>
-        <div class="flex big">
-          <div class="item sideways" style="width: 100px">
+        <p>
+          The boxes above show that rem and em are not affected by the
+          font-family but ex and ch are. As ex is related to the height it would
+          be more logical to use it to affect the height than the width, but
+          there may still be times when it could be used.
+        </p>
+        <h3>How font size affects sizes</h3>
+        <p>
+          The grids below shows what units are affected by font size, in the
+          second grid the font size has been doubled. Note that this change does
+          not affect the rem unit. rem stands for "root" em unit so is the font
+          size set on the html, so if you add font size to the html, this size
+          will change.
+        </p>
+        <div class="flex">
+          <div class="item outline sideways" style="width: 100px">
             <p>100px</p>
           </div>
-          <div class="item sideways" style="width: 10%">
+          <div class="item outline sideways" style="width: 10%">
             <p>10%</p>
           </div>
-          <div class="item sideways" style="width: 10rem">
+          <div class="item outline sideways" style="width: 10rem">
             <p>10rem</p>
           </div>
-          <div class="item sideways" style="width: 10em">
+          <div class="item outline sideways" style="width: 10em">
+            <p>10em</p>
+          </div>
+          <div class="item outline sideways" style="width: 10ex">
+            <p>10ex</p>
+          </div>
+          <div class="item outline sideways" style="width: 10ch">
+            <p>10ch</p>
+          </div>
+        </div>
+        <div class="flex big">
+          <div class="item outline sideways" style="width: 100px">
+            <p>100px</p>
+          </div>
+          <div class="item outline sideways" style="width: 10%">
+            <p>10%</p>
+          </div>
+          <div class="item outline sideways" style="width: 10rem">
+            <p>10rem</p>
+          </div>
+          <div class="item outline sideways" style="width: 10em">
             <p>10em<sup>*</sup></p>
           </div>
-          <div class="item sideways" style="width: 10ex">
+          <div class="item outline sideways" style="width: 10ex">
             <p>10ex<sup>*</sup></p>
           </div>
-          <div class="item sideways" style="width: 10ch">
+          <div class="item outline sideways" style="width: 10ch">
             <p>10ch<sup>*</sup></p>
           </div>
         </div>
+
         <blockquote>
           <sup>*</sup>Notice how some units change with the font size of the
-          parent. They also compound. I use this for the Hero section at the top
-          of the page.
+          parent. I use this for the Hero section at the top of the page.
         </blockquote>
+        <p>
+          They also compound. Below I make the font-size of each nested list 50%
+          bigger. Be careful this can easily get out of hand.
+        </p>
         <div>
           <ul class="bigger">
             <li>Normal</li>
@@ -123,33 +201,131 @@
             </ul>
           </ul>
         </div>
-        <h3>On smaller parent</h3>
-        <div class="flex" style="width: 50%">
-          <div class="item sideways" style="width: 100px">
+        <div class="flex resize">
+          <div class="item outline sideways" style="width: 100px">
             <p>100px</p>
           </div>
-          <div class="item sideways" style="width: 10%">
-            <p>10%<sup>*</sup></p>
-          </div>
-          <div class="item sideways" style="width: 10rem">
+          <div class="item outline sideways" style="width: 10rem">
             <p>10rem</p>
+          </div>
+          <div class="item outline sideways" style="width: 50%">
+            <p>50%<sup>*</sup></p>
           </div>
         </div>
         <blockquote>
           <sup>*</sup>Percentages are based on the size of the parent.
         </blockquote>
+        <div class="flex gap wrap">
+          <div>
+            <p style="width: 60ch">
+              This paragraph has 60ch, note the right margin is very jagged.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate velit error soluta ad vitae reiciendis vero. Libero
+              quis, vitae enim error assumenda optio quisquam dolore quos, a
+              sint nisi atque, iste repudiandae. Qui beatae, eaque praesentium
+              iure laborum expedita incidunt amet quisquam magnam ex est
+              tempora, vel cupiditate consequuntur nisi, rem alias. In, nostrum
+              consequuntur. Iste id voluptatibus perferendis quod quae accusamus
+              molestiae tenetur! Aperiam possimus excepturi quis totam! Delectus
+              aliquam, vel dolorum nisi magnam labore in, aliquid eaque suscipit
+              modi cumque dolorem laudantium tempora beatae, laboriosam ad
+              provident eius perferendis. Unde aliquid totam laboriosam odit. Ex
+              aliquam architecto suscipit?
+            </p>
+          </div>
+          <div>
+            <p style="width: 60ch; overflow-wrap: normal; hyphens: auto">
+              This paragraph has 60ch, adding overflow-wrap and hyphens makes
+              the right margin less jagged. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Cupiditate velit error soluta ad
+              vitae reiciendis vero. Libero quis, vitae enim error assumenda
+              optio quisquam dolore quos, a sint nisi atque, iste repudiandae.
+              Qui beatae, eaque praesentium iure laborum expedita incidunt amet
+              quisquam magnam ex est tempora, vel cupiditate consequuntur nisi,
+              rem alias. In, nostrum consequuntur. Iste id voluptatibus
+              perferendis quod quae accusamus molestiae tenetur! Aperiam
+              possimus excepturi quis totam! Delectus aliquam, vel dolorum nisi
+              magnam labore in, aliquid eaque suscipit modi cumque dolorem
+              laudantium tempora beatae, laboriosam ad provident eius
+              perferendis. Unde aliquid totam laboriosam odit. Ex aliquam
+              architecto suscipit?
+            </p>
+          </div>
+          <div class="resize" style="column-width: 25ch">
+            <p>
+              This paragraph uses column-width: 30ch, note this allows the
+              content to flow into multiple columns. Try resizing this box and
+              notice how it switches to two columns when there is not enough
+              space to fit three. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Cupiditate velit error soluta ad vitae
+              reiciendis vero. Libero quis, vitae enim error assumenda optio
+              quisquam dolore quos, a sint nisi atque, iste repudiandae. Qui
+              beatae, eaque praesentium iure laborum expedita incidunt amet
+              quisquam magnam ex est tempora, vel cupiditate consequuntur nisi,
+              rem alias. In, nostrum consequuntur. Iste id voluptatibus
+              perferendis quod quae accusamus molestiae tenetur! Aperiam
+              possimus excepturi quis totam! Delectus aliquam, vel dolorum nisi
+              magnam labore in, aliquid eaque suscipit modi cumque dolorem
+              laudantium tempora beatae, laboriosam ad provident eius
+              perferendis. Unde aliquid totam laboriosam odit. Ex aliquam
+              architecto suscipit?
+            </p>
+            <p>
+              You can control the size of the gap with column-gap. Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Cupiditate velit
+              error soluta ad vitae reiciendis vero. Libero quis, vitae enim
+              error assumenda optio quisquam dolore quos, a sint nisi atque,
+              iste repudiandae. Qui beatae, eaque praesentium iure laborum
+              expedita incidunt amet quisquam magnam ex est tempora, vel
+              cupiditate consequuntur nisi, rem alias. In, nostrum consequuntur.
+              Iste id voluptatibus perferendis quod quae accusamus molestiae
+              tenetur! Aperiam possimus excepturi quis totam! Delectus aliquam,
+              vel dolorum nisi magnam labore in, aliquid eaque suscipit modi
+              cumque dolorem laudantium tempora beatae, laboriosam ad provident
+              eius perferendis. Unde aliquid totam laboriosam odit. Ex aliquam
+              architecto suscipit?
+            </p>
+            <p
+              style="
+                column-width: 30ch;
+                column-rule: 1px solid #00000080;
+                overflow-wrap: normal;
+                hyphens: auto;
+              "
+            >
+              Or add lines between with column-rule same as border. Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Cupiditate velit
+              error soluta ad vitae reiciendis vero. Libero quis, vitae enim
+              error assumenda optio quisquam dolore quos, a sint nisi atque,
+              iste repudiandae. Qui beatae, eaque praesentium iure laborum
+              expedita incidunt amet quisquam magnam ex est tempora, vel
+              cupiditate consequuntur nisi, rem alias. In, nostrum consequuntur.
+              Iste id voluptatibus perferendis quod quae accusamus molestiae
+              tenetur! Aperiam possimus excepturi quis totam! Delectus aliquam,
+              vel dolorum nisi magnam labore in, aliquid eaque suscipit modi
+              cumque dolorem laudantium tempora beatae, laboriosam ad provident
+              eius perferendis. Unde aliquid totam laboriosam odit. Ex aliquam
+              architecto suscipit?
+            </p>
+          </div>
+        </div>
+        <blockquote>
+          Good values for titles are between 18-32ch and for paragraphs 40-80ch,
+          depending on requirements. You would normally apply column-width to a
+          div surrounding a number of paragraphs of text.
+        </blockquote>
         <h3>Viewport</h3>
         <div class="flex">
-          <div class="item sideways" style="width: 10vh">
+          <div class="item outline sideways" style="width: 10vh">
             <p>10vh</p>
           </div>
-          <div class="item sideways" style="width: 10vw">
+          <div class="item outline sideways" style="width: 10vw">
             <p>10vw</p>
           </div>
-          <div class="item sideways" style="width: 10vmin">
+          <div class="item outline sideways" style="width: 10vmin">
             <p>10vmin</p>
           </div>
-          <div class="item sideways" style="width: 10vmax">
+          <div class="item outline sideways" style="width: 10vmax">
             <p>10vmax</p>
           </div>
         </div>
@@ -177,9 +353,10 @@
           </div>
         </div>
       </section>
+
       <section class="calculations">
-        <h2>Calculations</h2>
-        <div class="flex columns" style="outline: 1px solid red">
+        <h2>Calculations in Flexbox</h2>
+        <div class="flex columns resize">
           <div class="item" style="width: calc(9rem + 16px)">
             <p>Calc 9rem + 16px</p>
           </div>
@@ -209,7 +386,7 @@
       <section class="grids">
         <h2>Grids</h2>
         <h3>Grid 1fr</h3>
-        <div class="grid" style="grid-template-columns: repeat(3, 1fr)">
+        <div class="grid resize" style="grid-template-columns: repeat(3, 1fr)">
           <div class="item">
             <p>1fr</p>
           </div>
@@ -222,7 +399,7 @@
         </div>
         <h3>Grid auto fit</h3>
         <div
-          class="grid"
+          class="grid resize"
           style="grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))"
         >
           <div class="item">
@@ -237,7 +414,7 @@
         </div>
         <h3>Grid auto fill</h3>
         <div
-          class="grid"
+          class="grid resize"
           style="grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr))"
         >
           <div class="item">
@@ -252,7 +429,7 @@
         </div>
         <h3>Grid Maxmin</h3>
         <div
-          class="grid"
+          class="grid resize"
           style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
         >
           <div class="item">
@@ -271,13 +448,67 @@
           columns grow to share the space available.
         </blockquote>
       </section>
+      <section class="reactions">
+        <h2>Reactions to size changes</h2>
+        <div
+          class="grid resize"
+          style="
+            grid-template-columns: minmax(50px, 1fr) minmax(50px, auto) min-content fit-content(
+                20%
+              );
+          "
+        >
+          <div class="item">
+            <h6>1fr</h6>
+            <p>
+              uses minmax(50px, 1fr) to avoid shrinking to nothing. Lorem ipsum
+              dolor sit, amet consectetur adipisicing elit. Quas enim est
+              adipisci voluptatum fugit architecto at facere delectus sit
+              expedita!
+            </p>
+          </div>
+          <div class="item">
+            <h6>auto</h6>
+            <p>
+              uses<br />minmax(50px, auto)<br />
+              to avoid shrinking<br />
+              to nothing<br />
+              and &lt;br&gt; to limit<br />
+              content size.<br />
+              like fit-content.
+            </p>
+          </div>
+          <div class="item">
+            <h6>min-content</h6>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas
+              enim est adipisci voluptatum fugit architecto at facere delectus
+              sit expedita!
+            </p>
+          </div>
+          <div class="item">
+            <h6>fit-content 20%</h6>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas
+              enim est adipisci voluptatum fugit architecto at facere delectus
+              sit expedita!
+            </p>
+          </div>
+        </div>
+        <blockquote>
+          Resize the box and note what changes and when. After all others are
+          calculated 1fr takes all the available space. fit-content(20%) acts
+          like 20% until it reaches min-content size then it stops shrinking.
+          auto will continue to shrink if there is not enough space.
+        </blockquote>
+      </section>
       <section>
         <h2>Padding and Margin</h2>
         <blockquote>
           Note In the reset I am setting box sizing to border-box.
         </blockquote>
         <div
-          class="grid outline"
+          class="grid resize"
           styles="grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))"
         >
           <div class="outline" style="margin-block: 2rem">margin-block</div>

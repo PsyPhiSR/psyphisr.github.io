@@ -40,3 +40,9 @@ Open to project in VS Code install the Live Server Extension and click *Go Live*
 [Building by Matteo Catanese](https://unsplash.com/photos/tr7PoBH0Aow?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
 
 [Symmetry by Oskars Sylwan](https://unsplash.com/photos/rcAOIMSDfyc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+
+[Space2 by Jeremy Thomas](https://unsplash.com/photos/E0AHdsENmDg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+
+[Andromeda by Guillermo Ferla](https://unsplash.com/photos/Oze6U2m1oYU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+
+[Galaxy - Shot by Cerqueira](https://unsplash.com/photos/0o_GEzyargo?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
