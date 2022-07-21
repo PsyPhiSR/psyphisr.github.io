@@ -141,7 +141,7 @@ section > :where(h2, h3, h4) {
 .font-example::after {
   content: '';
   position: absolute;
-  bottom: 12px;
+  bottom: 13px;
   width: 5ch;
   border-bottom: 1px solid red;
 }

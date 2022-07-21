@@ -332,23 +332,23 @@
         <h3>Content based</h3>
         <div class="flex columns">
           <h4>Fit content acts like stretch (parent has max width)</h4>
-          <div class="item" style="max-width: 10rem">
+          <div class="item outline" style="max-width: 10rem">
             <p style="width: fit-content">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
           </div>
-          <div class="item" style="width: fit-content">
+          <div class="item outline" style="width: fit-content">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <blockquote>
             It will only expand to the max-content width. See below.
           </blockquote>
           <h4>Min content</h4>
-          <div class="item" style="width: min-content">
+          <div class="item outline" style="width: min-content">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <h4>Max content</h4>
-          <div class="item" style="width: max-content">
+          <div class="item outline" style="width: max-content">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
@@ -357,25 +357,25 @@
       <section class="calculations">
         <h2>Calculations in Flexbox</h2>
         <div class="flex columns resize">
-          <div class="item" style="width: calc(9rem + 16px)">
+          <div class="item outline" style="width: calc(9rem + 16px)">
             <p>Calc 9rem + 16px</p>
           </div>
-          <div class="item" style="width: calc(10rem + 50%)">
+          <div class="item outline" style="width: calc(10rem + 50%)">
             <p>Calc 10rem + 10%</p>
           </div>
-          <div class="item" style="width: min(20%, 10rem)">
+          <div class="item outline" style="width: min(20%, 10rem)">
             <p>Min 20%, 10rem</p>
           </div>
-          <div class="item" style="width: min(100%, 40rem)">
+          <div class="item outline" style="width: min(100%, 40rem)">
             <p>Min 100%, 40rem</p>
           </div>
-          <div class="item" style="width: max(100%, 20rem)">
+          <div class="item outline" style="width: max(100%, 20rem)">
             <p>Max 100%, 20rem</p>
           </div>
-          <div class="item" style="width: max(50%, 10rem)">
+          <div class="item outline" style="width: max(50%, 10rem)">
             <p>Max 50%, 10rem</p>
           </div>
-          <div class="item" style="width: clamp(10rem, 50%, 20rem)">
+          <div class="item outline" style="width: clamp(10rem, 50%, 20rem)">
             <p>Clamp 10rem, 50%, 20rem</p>
           </div>
         </div>
@@ -387,13 +387,13 @@
         <h2>Grids</h2>
         <h3>Grid 1fr</h3>
         <div class="grid resize" style="grid-template-columns: repeat(3, 1fr)">
-          <div class="item">
+          <div class="item outline">
             <p>1fr</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>1fr</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>1fr</p>
           </div>
         </div>
@@ -402,13 +402,13 @@
           class="grid resize"
           style="grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))"
         >
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
         </div>
@@ -417,13 +417,13 @@
           class="grid resize"
           style="grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr))"
         >
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
         </div>
@@ -432,13 +432,13 @@
           class="grid resize"
           style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
         >
-          <div class="item">
+          <div class="item outline">
             <p>Minmax</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>Minmax</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>Minmax</p>
           </div>
         </div>
@@ -458,7 +458,7 @@
               );
           "
         >
-          <div class="item">
+          <div class="item outline">
             <h6>1fr</h6>
             <p>
               uses minmax(50px, 1fr) to avoid shrinking to nothing. Lorem ipsum
@@ -467,7 +467,7 @@
               expedita!
             </p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <h6>auto</h6>
             <p>
               uses<br />minmax(50px, auto)<br />
@@ -478,7 +478,7 @@
               like fit-content.
             </p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <h6>min-content</h6>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas
@@ -486,7 +486,7 @@
               sit expedita!
             </p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <h6>fit-content 20%</h6>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas
@@ -528,22 +528,22 @@
           class="grid gap outline"
           style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
         >
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
-          <div class="item">
+          <div class="item outline">
             <p>auto</p>
           </div>
         </div>
