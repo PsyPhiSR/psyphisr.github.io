@@ -21,6 +21,11 @@ Open to project in VS Code install the Live Server Extension and click *Go Live*
 - [Mdn](https://developer.mozilla.org/en-US/)
 - [W3school](https://www.w3schools.com/)
 - [Heydon Pickering](https://heydonworks.com/)
+- [Smashing Magazine](https://www.smashingmagazine.com)
+
+#### Specific Articles
+
+- [Smashing Magazine](https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/)
 
 ### Youtube
 

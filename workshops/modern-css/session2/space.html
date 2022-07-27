@@ -20,13 +20,13 @@
       </a>
     </header>
     <main>
-      <header
-        class="hero full-bleed"
-        style="background-image: url('../images/space2.jpg')"
-      >
-        <h1>Lession 1 - Units</h1>
-      </header>
-      <section class="units">
+      <section class="units content">
+        <header
+          class="hero full-bleed"
+          style="background-image: url('../images/space2.jpg')"
+        >
+          <h2>Lession 1 - Units</h2>
+        </header>
         <h2>Alternatives to px</h2>
         <p>
           As developer&apos;s we have a tendency to copy a pixel value from a
@@ -80,20 +80,20 @@
           Try removing it to see what happens.
         </p>
 
+        <div class="font-example">
+          <div>x</div>
+          <div>x</div>
+          <div>X</div>
+          <div>X</div>
+        </div>
         <div
           style="
             display: grid;
             justify-items: center;
-            grid-template-columns: repeat(5, max-content);
+            grid-template-columns: repeat(4, max-content);
             margin-block: 4rem;
           "
         >
-          <div class="font-example">
-            <div>x</div>
-            <div>x</div>
-            <div>X</div>
-            <div>X</div>
-          </div>
           <div style="display: grid; line-height: 1">
             <div class="item outline" style="font-family: Barlow; width: 10rem">
               Barlow 10rem
@@ -181,7 +181,6 @@
             <p>10ch<sup>*</sup></p>
           </div>
         </div>
-
         <blockquote>
           <sup>*</sup>Notice how some units change with the font size of the
           parent. I use this for the Hero section at the top of the page.
@@ -201,6 +200,7 @@
             </ul>
           </ul>
         </div>
+        <h3>Percentages of parent</h3>
         <div class="flex resize">
           <div class="item outline sideways" style="width: 100px">
             <p>100px</p>
@@ -215,6 +215,7 @@
         <blockquote>
           <sup>*</sup>Percentages are based on the size of the parent.
         </blockquote>
+        <h3>Using ch units to control the width of paragraphs</h3>
         <div class="flex gap wrap">
           <div>
             <p style="width: 60ch">
@@ -251,24 +252,39 @@
               architecto suscipit?
             </p>
           </div>
-          <div class="resize" style="column-width: 25ch">
+          <h3>Letting the browser do it with column-width</h3>
+          <div
+            class="resize"
+            style="
+              width: 100%;
+              column-width: 25ch;
+              column-rule: 1px solid #00000080;
+              column-gap: 2rem;
+              overflow-wrap: normal;
+              hyphens: auto;
+            "
+          >
             <p>
-              This paragraph uses column-width: 30ch, note this allows the
+              This paragraph uses column-width: 25ch, note this allows the
               content to flow into multiple columns. Try resizing this box and
-              notice how it switches to two columns when there is not enough
-              space to fit three. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Cupiditate velit error soluta ad vitae
-              reiciendis vero. Libero quis, vitae enim error assumenda optio
-              quisquam dolore quos, a sint nisi atque, iste repudiandae. Qui
-              beatae, eaque praesentium iure laborum expedita incidunt amet
-              quisquam magnam ex est tempora, vel cupiditate consequuntur nisi,
-              rem alias. In, nostrum consequuntur. Iste id voluptatibus
-              perferendis quod quae accusamus molestiae tenetur! Aperiam
-              possimus excepturi quis totam! Delectus aliquam, vel dolorum nisi
-              magnam labore in, aliquid eaque suscipit modi cumque dolorem
-              laudantium tempora beatae, laboriosam ad provident eius
-              perferendis. Unde aliquid totam laboriosam odit. Ex aliquam
-              architecto suscipit?
+              notice how it switches to less columns when there is not enough
+              space to fit. The length of the component will automatically grow
+              to fit the content. Try switching off the column-rule or
+              column-gap on the parent element.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate velit error soluta ad vitae reiciendis vero. Libero
+              quis, vitae enim error assumenda optio quisquam dolore quos, a
+              sint nisi atque, iste repudiandae. Qui beatae, eaque praesentium
+              iure laborum expedita incidunt amet quisquam magnam ex est
+              tempora, vel cupiditate consequuntur nisi, rem alias. In, nostrum
+              consequuntur. Iste id voluptatibus perferendis quod quae accusamus
+              molestiae tenetur! Aperiam possimus excepturi quis totam! Delectus
+              aliquam, vel dolorum nisi magnam labore in, aliquid eaque suscipit
+              modi cumque dolorem laudantium tempora beatae, laboriosam ad
+              provident eius perferendis. Unde aliquid totam laboriosam odit. Ex
+              aliquam architecto suscipit?
             </p>
             <p>
               You can control the size of the gap with column-gap. Lorem ipsum
@@ -285,14 +301,7 @@
               eius perferendis. Unde aliquid totam laboriosam odit. Ex aliquam
               architecto suscipit?
             </p>
-            <p
-              style="
-                column-width: 30ch;
-                column-rule: 1px solid #00000080;
-                overflow-wrap: normal;
-                hyphens: auto;
-              "
-            >
+            <p>
               Or add lines between with column-rule same as border. Lorem ipsum
               dolor sit amet consectetur adipisicing elit. Cupiditate velit
               error soluta ad vitae reiciendis vero. Libero quis, vitae enim
@@ -311,8 +320,12 @@
         </div>
         <blockquote>
           Good values for titles are between 18-32ch and for paragraphs 40-80ch,
-          depending on requirements. You would normally apply column-width to a
-          div surrounding a number of paragraphs of text.
+          depending on requirements. Note that column-gap only applies to the
+          gaps between the columns not to the margin on the left and right
+          sides.
+          <br />
+          Notice that at some sizes we get orphans (single words on a newline)
+          at the end of some paragraphs. Usually we want to avoid this.
         </blockquote>
         <h3>Viewport</h3>
         <div class="flex">
@@ -329,9 +342,38 @@
             <p>10vmax</p>
           </div>
         </div>
+        <div class="flex">
+          <div class="item outline sideways" style="width: 10vb">
+            <p>10vb<sup>*</sup></p>
+          </div>
+          <div class="item outline sideways" style="width: 10vi">
+            <p>10vi<sup>*</sup></p>
+          </div>
+          <div class="item outline sideways" style="width: 10svw">
+            <p>10svw<sup>*</sup></p>
+          </div>
+          <div class="item outline sideways" style="width: 10lvw">
+            <p>10lvw<sup>*</sup></p>
+          </div>
+          <div class="item outline sideways" style="width: 10dvw">
+            <p>10dvw<sup>*</sup></p>
+          </div>
+          <div class="item outline sideways" style="width: 10svh">
+            <p>10svh<sup>*</sup></p>
+          </div>
+          <div class="item outline sideways" style="width: 10lvh">
+            <p>10lvh<sup>*</sup></p>
+          </div>
+          <div class="item outline sideways" style="width: 10dvh">
+            <p>10dvh<sup>*</sup></p>
+          </div>
+        </div>
+        <p><sup>*</sup>Try this in safari or firefox</p>
         <h3>Content based</h3>
         <div class="flex columns">
-          <h4>Fit content acts like stretch (parent has max width)</h4>
+          <h4>
+            Fit content acts like stretch or flex-grow (parent has max width)
+          </h4>
           <div class="item outline" style="max-width: 10rem">
             <p style="width: fit-content">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -352,10 +394,23 @@
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
+        <h3>Future units</h3>
+        <p>There are a number of other units coming soon.</p>
+        <dl>
+          <dt>lh</dt>
+          <dd>Line height of the element</dd>
+          <dt>rlh</dt>
+          <dd>Line height of root element. Think rem but for line height.</dd>
+        </dl>
       </section>
-
-      <section class="calculations">
-        <h2>Calculations in Flexbox</h2>
+      <section class="calculations content">
+        <header
+        class="hero full-bleed"
+        style="background-image: url('../images/galaxy.jpg')"
+      >
+        <h2>Lession 2 - Combining Units</h2>
+      </header>
+        <h2>Calculations in Flexbox using width</h2>
         <div class="flex columns resize">
           <div class="item outline" style="width: calc(9rem + 16px)">
             <p>Calc 9rem + 16px</p>
@@ -382,11 +437,73 @@
         <blockquote>
           <sup>*</sup>At smaller sizes many of these will overflow the parent.
         </blockquote>
+        <h2>Calculations in Flexbox columns using flex-basis</h2>
+        <div class="flex columns resize">
+          <div class="item outline" style="flex-basis: calc(9rem + 16px)">
+            <p>Calc 9rem + 16px</p>
+          </div>
+          <div class="item outline" style="flex-basis: calc(10rem + 50%)">
+            <p>Calc 10rem + 10%</p>
+          </div>
+          <div class="item outline" style="flex-basis: min(20%, 10rem)">
+            <p>Min 20%, 10rem</p>
+          </div>
+          <div class="item outline" style="flex-basis: min(100%, 40rem)">
+            <p>Min 100%, 40rem</p>
+          </div>
+          <div class="item outline" style="flex-basis: max(100%, 20rem)">
+            <p>Max 100%, 20rem</p>
+          </div>
+          <div class="item outline" style="flex-basis: max(50%, 10rem)">
+            <p>Max 50%, 10rem</p>
+          </div>
+          <div
+            class="item outline"
+            style="flex-basis: clamp(10rem, 50%, 20rem)"
+          >
+            <p>Clamp 10rem, 50%, 20rem</p>
+          </div>
+        </div>
       </section>
-      <section class="grids">
+      <section class="grids content">
+        <header
+          class="hero full-bleed"
+          style="background-image: url('../images/andromeda.jpg')"
+        >
+          <h2>Lession 3 - Grids</h2>
+        </header>
         <h2>Grids</h2>
-        <h3>Grid 1fr</h3>
-        <div class="grid resize" style="grid-template-columns: repeat(3, 1fr)">
+        <p>
+          There are a number of options for a grid column or row, some of which
+          we have covered above and some that are specific to grid and flexbox.
+          Note as you don't difine columns or rows in a template in flexbox, you
+          would not use them in the same way as grid.
+        </p>
+        <p>
+          In the examples below we are using various units in
+          grid-template-columns to define a three column grid. A fixed width
+          track (a row in column-based template or column in a row-based
+          template) can be difined with any of the units from above. One option
+          for a more dynamic track is a percentage, but unless there is a good
+          reason to use it, percentage should be avoided due to content
+          overflow.
+        </p>
+        <p>Let's begin with a grid specific unit!</p>
+        <h3>Grid fraction unit</h3>
+        <p>
+          fr stands for fraction, each element with a fraction unit will gain a
+          proportion of the remaining space after fixed elements are calculated.
+          This space will be based on the factor before the fr. i.e. if there is
+          60px remaining space and there are 3 elements each with 1fr, each one
+          will get 20px (60px / 3 i.e. 1fr * 3 elements), if the first has 2fr
+          it will get 30px (60px / 4 * 2 i.e. now there are 4 fractions in total
+          and this element has to of them ) and the other two will get 15px.
+        </p>
+        <p>
+          If not used in a function (see below) then it implies an automatic
+          minimum (see auto below).
+        </p>
+        <div class="grid resize" style="grid-template-columns: 1fr 1fr 1fr">
           <div class="item outline">
             <p>1fr</p>
           </div>
@@ -395,6 +512,111 @@
           </div>
           <div class="item outline">
             <p>1fr</p>
+          </div>
+        </div>
+        <p>
+          This grid is defined the same as above but with auto instead. Note it
+          is idential due to the implicit automatic minium of the fr unit.
+        </p>
+        <p>
+          Guess what? Auto as an implied nature too. If it is used outside a
+          function (see below) then it represents the range between the minimum
+          and maximum (see the min/max content section).
+        </p>
+        <p>Note that auto tracks can be stretched by align/justify-content.</p>
+        <div class="grid resize" style="grid-template-columns: auto auto auto">
+          <div class="item outline">
+            <p>auto</p>
+          </div>
+          <div class="item outline">
+            <p>auto</p>
+          </div>
+          <div class="item outline">
+            <p>auto</p>
+          </div>
+        </div>
+        <blockquote>
+          Note for both of these options we explicitly setting the number of
+          columns in a row. As we reduce the size of the parent, the columns
+          clapse to the min-content size and then it starts to overflow.
+        </blockquote>
+        <p>
+          We can also use the min-content and max-content but it is
+          non-responsive. For fit-content see section below.
+        </p>
+        <div
+          class="grid resize"
+          style="grid-template-columns: min-content min-content min-content"
+        >
+          <div class="item outline">
+            <p>min content</p>
+          </div>
+          <div class="item outline">
+            <p>min content</p>
+          </div>
+          <div class="item outline">
+            <p>min content</p>
+          </div>
+        </div>
+        <div
+          class="grid resize"
+          style="grid-template-columns: max-content max-content max-content"
+        >
+          <div class="item outline">
+            <p>max content</p>
+          </div>
+          <div class="item outline">
+            <p>max content</p>
+          </div>
+          <div class="item outline">
+            <p>max content</p>
+          </div>
+        </div>
+
+        <h3>Grid minmax</h3>
+        <p>
+          One option to start to make things wrap is minmax a functional
+          notation for the size of a track that defines a size range greater
+          than or equal to the min and less than or equal to the max. The fr
+          unit can be used in the max position to take a fraction of the
+          remaining space.
+        </p>
+        <p>
+          <sup>*</sup>There is more to getting this to work (see auto fit
+          section below).
+        </p>
+        <div
+          class="grid resize"
+          style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
+        >
+          <div class="item outline">
+            <p>Minmax min 15rem</p>
+          </div>
+          <div class="item outline">
+            <p>Minmax min 15rem</p>
+          </div>
+          <div class="item outline">
+            <p>Minmax min 15rem</p>
+          </div>
+        </div>
+        <blockquote>
+          Note that when the parent is too small to fit three columns with the
+          minimum width, one of the columns drops to the row below and the
+          columns grow to share the space available. However, when it gets to
+          one columns it will start to overflow.
+        </blockquote>
+        <div
+          class="grid resize"
+          style="grid-template-columns: repeat(3, fit-content(50%))"
+        >
+          <div class="item outline">
+            <p>Minmax min 15rem</p>
+          </div>
+          <div class="item outline">
+            <p>Minmax min 15rem</p>
+          </div>
+          <div class="item outline">
+            <p>Minmax min 15rem</p>
           </div>
         </div>
         <h3>Grid auto fit</h3>
@@ -403,13 +625,13 @@
           style="grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))"
         >
           <div class="item outline">
-            <p>auto</p>
+            <p>auto-fit using minmax 10rem 1fr</p>
           </div>
           <div class="item outline">
-            <p>auto</p>
+            <p>auto-fit using minmax 10rem 1fr</p>
           </div>
           <div class="item outline">
-            <p>auto</p>
+            <p>auto-fit using minmax 10rem 1fr</p>
           </div>
         </div>
         <h3>Grid auto fill</h3>
@@ -418,38 +640,70 @@
           style="grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr))"
         >
           <div class="item outline">
-            <p>auto</p>
+            <p>auto-fill using minmax 10rem 1fr</p>
           </div>
           <div class="item outline">
-            <p>auto</p>
+            <p>auto-fill using minmax 10rem 1fr</p>
           </div>
           <div class="item outline">
-            <p>auto</p>
-          </div>
-        </div>
-        <h3>Grid Maxmin</h3>
-        <div
-          class="grid resize"
-          style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
-        >
-          <div class="item outline">
-            <p>Minmax</p>
-          </div>
-          <div class="item outline">
-            <p>Minmax</p>
-          </div>
-          <div class="item outline">
-            <p>Minmax</p>
+            <p>auto-fill using minmax 10rem 1fr</p>
           </div>
         </div>
         <blockquote>
-          Note that when the parent is too small to fit three columns with the
-          minimum width, one of the columns drops to the row below and the
-          columns grow to share the space available.
+          You can remember which one to use by thinks fit - fits the full size
+          available whereas fill - fills it up. In both cases when the minimum
+          size is reached both option behaviour in the same way. auto-fit is
+          most likely to be the desired behaviour in most cases.
         </blockquote>
       </section>
-      <section class="reactions">
+      <section class="reactions content">
         <h2>Reactions to size changes</h2>
+        <p>
+          So what? Who cares about all this stuff? In the past we trended to
+          make grid that were even or 2/1 ratio columns (i.e. 1 column that is
+          twice as big as the others). What we can start to do with Modern css
+          is to allow the layout to be responsive to the intrinsic size of the
+          content. Responding in a predictable way to a piece of unknown content
+          loaded from a CMS for example. As a developer we don't know ahead of
+          time what the content writer is going to add, so we need to make a
+          layout that can handle a lot of text or a little gracefully.
+        </p>
+        <p>
+          We can also create layouts that response to content in different ways
+          that maybe more interesting than everything growing or shrinking at
+          the same rate.
+        </p>
+        <div
+          class="grid resize"
+          style="
+            grid-template-columns: fit-content(50%) fit-content(25%) fit-content(
+                25%
+              );
+          "
+        >
+          <div class="item outline">
+            <p>fit content 50% plus Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="item outline">
+            <p>
+              fit content 25% plus Lorem ipsum dolor sit, amet consectetur
+              adipisicing elit. Doloremque, eligendi?
+            </p>
+          </div>
+          <div class="item outline">
+            <p>
+              fit content 25% plus Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Repellat, iste?
+            </p>
+          </div>
+        </div>
+        <blockquote>
+          Notice that there is not enough content in the first column to make it
+          grow to the full width of 50%. There is much more in the other two
+          columns. But the other two columns shrink first until we get to the
+          ratios we added to the fit-content tracks (50%/25%/25%) then the
+          columns shrink proportionally.
+        </blockquote>
         <div
           class="grid resize"
           style="
@@ -502,7 +756,7 @@
           auto will continue to shrink if there is not enough space.
         </blockquote>
       </section>
-      <section>
+      <section class="padding content">
         <h2>Padding and Margin</h2>
         <blockquote>
           Note In the reset I am setting box sizing to border-box.
@@ -524,27 +778,71 @@
           <div class="outline" style="margin: 2rem; padding: 2rem">all</div>
         </div>
         <h3>Gap</h3>
+        <p>gap is a new way to add a gap in the flexbox and grid.</p>
+        <h4>Flex with grow</h4>
+        <div class="flex gap resize grow wrap">
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+        </div>
+        <h4>Flex without grow</h4>
+        <div class="flex gap resize wrap">
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+        </div>
+        <h4>Grid</h4>
         <div
-          class="grid gap outline"
+          class="grid gap resize"
           style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
         >
           <div class="item outline">
-            <p>auto</p>
+            <p>Grid</p>
           </div>
           <div class="item outline">
-            <p>auto</p>
+            <p>Grid</p>
           </div>
           <div class="item outline">
-            <p>auto</p>
+            <p>Grid</p>
           </div>
           <div class="item outline">
-            <p>auto</p>
+            <p>Grid</p>
           </div>
           <div class="item outline">
-            <p>auto</p>
+            <p>Grid</p>
           </div>
           <div class="item outline">
-            <p>auto</p>
+            <p>Grid</p>
           </div>
         </div>
         <blockquote>

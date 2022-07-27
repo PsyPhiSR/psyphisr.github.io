@@ -38,10 +38,6 @@ body > .hero {
   font-size: 4em;
 }
 
-main > .hero {
-  font-size: 2rem;
-}
-
 .hero {
   position: relative;
   display: grid;
@@ -52,18 +48,19 @@ main > .hero {
   background-color: #000;
 }
 
-.hero h1 {
-  flex-grow: 1;
+.hero :where(h1, h2) {
   color: #fff;
 }
 
-main {
-  margin-bottom: 5vmin;
+.content {
   display: grid;
-  grid-template-columns: 1fr min(90rem, (100% - 2rem)) 1fr;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    min(90rem, (100% - 2rem))
+    minmax(1rem, 1fr);
 }
 
-main > * {
+.content > * {
   grid-column: 2;
 }
 
@@ -72,8 +69,16 @@ main > * {
   grid-column: 1 / -1;
 }
 
+main {
+  margin-bottom: 5vmin;
+}
+
+section > .hero {
+  font-size: 2rem;
+}
+
 section {
-  margin-block: 5vmin;
+  margin-bottom: 5vmin;
 }
 
 section > :where(h2, h3, h4) {
@@ -82,7 +87,7 @@ section > :where(h2, h3, h4) {
 
 .flex {
   display: flex;
-  min-height: 20vmin;
+  min-height: 10vmin;
   margin-block: 2rem;
 }
 
@@ -106,7 +111,7 @@ section > :where(h2, h3, h4) {
 }
 
 .grid {
-  min-height: 20vmin;
+  min-height: 10vmin;
   display: grid;
   margin-block: 2rem;
 }
@@ -114,9 +119,9 @@ section > :where(h2, h3, h4) {
 .font-example {
   display: grid;
   height: min-content;
-  grid-template-columns: min-content min-content min-content min-content; 
+  grid-template-columns: min-content min-content min-content min-content;
   line-height: 1;
-  font-size: 96px; 
+  font-size: 96px;
   font-weight: 400;
   position: relative;
   align-items: baseline;
@@ -130,7 +135,7 @@ section > :where(h2, h3, h4) {
   font-family: Inter;
 }
 .font-example::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 18px;
   width: 5ch;
@@ -139,7 +144,7 @@ section > :where(h2, h3, h4) {
   border-bottom: 1px solid red;
 }
 .font-example::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 13px;
   width: 5ch;
