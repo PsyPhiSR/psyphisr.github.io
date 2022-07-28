@@ -20,7 +20,7 @@
       </a>
     </header>
     <main>
-      <section class="units content">
+      <section class="units container">
         <header
           class="hero full-bleed"
           style="background-image: url('../images/space2.jpg')"
@@ -375,22 +375,22 @@
             Fit content acts like stretch or flex-grow (parent has max width)
           </h4>
           <div class="item outline" style="max-width: 10rem">
-            <p style="width: fit-content">
+            <p style="width: fit-container">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
           </div>
-          <div class="item outline" style="width: fit-content">
+          <div class="item outline" style="width: fit-container">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <blockquote>
             It will only expand to the max-content width. See below.
           </blockquote>
           <h4>Min content</h4>
-          <div class="item outline" style="width: min-content">
+          <div class="item outline" style="width: min-container">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <h4>Max content</h4>
-          <div class="item outline" style="width: max-content">
+          <div class="item outline" style="width: max-container">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
@@ -403,13 +403,13 @@
           <dd>Line height of root element. Think rem but for line height.</dd>
         </dl>
       </section>
-      <section class="calculations content">
+      <section class="calculations container">
         <header
-        class="hero full-bleed"
-        style="background-image: url('../images/galaxy.jpg')"
-      >
-        <h2>Lession 2 - Combining Units</h2>
-      </header>
+          class="hero full-bleed"
+          style="background-image: url('../images/galaxy.jpg')"
+        >
+          <h2>Lession 2 - Combining Units</h2>
+        </header>
         <h2>Calculations in Flexbox using width</h2>
         <div class="flex columns resize">
           <div class="item outline" style="width: calc(9rem + 16px)">
@@ -442,20 +442,14 @@
           <div class="item outline" style="flex-basis: calc(9rem + 16px)">
             <p>Calc 9rem + 16px</p>
           </div>
-          <div class="item outline" style="flex-basis: calc(10rem + 50%)">
+          <div class="item outline" style="flex-basis: calc(10rem + 10%)">
             <p>Calc 10rem + 10%</p>
           </div>
-          <div class="item outline" style="flex-basis: min(20%, 10rem)">
-            <p>Min 20%, 10rem</p>
+          <div class="item outline" style="flex-basis: min(10%, 10rem)">
+            <p>Min 10%, 10rem</p>
           </div>
-          <div class="item outline" style="flex-basis: min(100%, 40rem)">
-            <p>Min 100%, 40rem</p>
-          </div>
-          <div class="item outline" style="flex-basis: max(100%, 20rem)">
-            <p>Max 100%, 20rem</p>
-          </div>
-          <div class="item outline" style="flex-basis: max(50%, 10rem)">
-            <p>Max 50%, 10rem</p>
+          <div class="item outline" style="flex-basis: max(10%, 10rem)">
+            <p>Max 10%, 10rem</p>
           </div>
           <div
             class="item outline"
@@ -465,7 +459,7 @@
           </div>
         </div>
       </section>
-      <section class="grids content">
+      <section class="grids container">
         <header
           class="hero full-bleed"
           style="background-image: url('../images/andromeda.jpg')"
@@ -655,9 +649,108 @@
           size is reached both option behaviour in the same way. auto-fit is
           most likely to be the desired behaviour in most cases.
         </blockquote>
+        <h3>Adding space to grids</h3>
+        <p>gap is a new way to add a gap in the flexbox and grid.</p>
+        <h4>Flex with grow</h4>
+        <div class="flex gap resize grow wrap">
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+        </div>
+        <h4>Flex without grow</h4>
+        <div class="flex gap resize wrap">
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+          <div class="item outline" style="min-width: 15rem">
+            <p>Flex</p>
+          </div>
+        </div>
+        <blockquote>
+          Note that the boxes are a fixed width and leave a gap at the end if
+          there is not enough space for another column.
+        </blockquote>
+        <h4>Grid</h4>
+        <div
+          class="grid gap resize"
+          style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
+        >
+          <div class="item outline">
+            <p>Grid</p>
+          </div>
+          <div class="item outline">
+            <p>Grid</p>
+          </div>
+          <div class="item outline">
+            <p>Grid</p>
+          </div>
+          <div class="item outline">
+            <p>Grid</p>
+          </div>
+          <div class="item outline">
+            <p>Grid</p>
+          </div>
+          <div class="item outline">
+            <p>Grid</p>
+          </div>
+        </div>
+        <blockquote>
+          Note There is no gap around the edge. You can specify two values to
+          change the row and column gaps.
+        </blockquote>
+        <h4>Padding and Margin</h4>
+        <div
+          class="grid resize"
+          style="grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))"
+        >
+          <div class="outline" style="margin-block: 2rem">margin-block</div>
+          <div class="outline" style="margin-inline: 2rem">margin-inline</div>
+          <div class="outline" style="padding-block: 2rem">padding-block</div>
+          <div class="outline" style="padding-inline: 2rem">padding-inline</div>
+          <div class="outline" style="margin-block: 2rem; padding-inline: 2rem">
+            combo mb pi
+          </div>
+          <div class="outline" style="margin-inline: 2rem; padding-block: 2rem">
+            combo mi pb
+          </div>
+          <div class="outline" style="margin: 2rem; padding: 2rem">all</div>
+        </div>
       </section>
-      <section class="reactions content">
-        <h2>Reactions to size changes</h2>
+      <section class="reactions container">
+        <header
+          class="hero full-bleed"
+          style="background-image: url('../images/galaxy.jpg')"
+        >
+          <h2>Lession 4 - Resizing</h2>
+        </header>
+        <h3>Reactions to size changes</h3>
         <p>
           So what? Who cares about all this stuff? In the past we trended to
           make grid that were even or 2/1 ratio columns (i.e. 1 column that is
@@ -754,100 +847,6 @@
           calculated 1fr takes all the available space. fit-content(20%) acts
           like 20% until it reaches min-content size then it stops shrinking.
           auto will continue to shrink if there is not enough space.
-        </blockquote>
-      </section>
-      <section class="padding content">
-        <h2>Padding and Margin</h2>
-        <blockquote>
-          Note In the reset I am setting box sizing to border-box.
-        </blockquote>
-        <div
-          class="grid resize"
-          styles="grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))"
-        >
-          <div class="outline" style="margin-block: 2rem">margin-block</div>
-          <div class="outline" style="margin-inline: 2rem">margin-inline</div>
-          <div class="outline" style="padding-block: 2rem">padding-block</div>
-          <div class="outline" style="padding-inline: 2rem">padding-inline</div>
-          <div class="outline" style="margin-block: 2rem; padding-inline: 2rem">
-            combo
-          </div>
-          <div class="outline" style="margin-inline: 2rem; padding-block: 2rem">
-            combo
-          </div>
-          <div class="outline" style="margin: 2rem; padding: 2rem">all</div>
-        </div>
-        <h3>Gap</h3>
-        <p>gap is a new way to add a gap in the flexbox and grid.</p>
-        <h4>Flex with grow</h4>
-        <div class="flex gap resize grow wrap">
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-        </div>
-        <h4>Flex without grow</h4>
-        <div class="flex gap resize wrap">
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-          <div class="item outline" style="min-width: 15rem">
-            <p>Flex</p>
-          </div>
-        </div>
-        <h4>Grid</h4>
-        <div
-          class="grid gap resize"
-          style="grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))"
-        >
-          <div class="item outline">
-            <p>Grid</p>
-          </div>
-          <div class="item outline">
-            <p>Grid</p>
-          </div>
-          <div class="item outline">
-            <p>Grid</p>
-          </div>
-          <div class="item outline">
-            <p>Grid</p>
-          </div>
-          <div class="item outline">
-            <p>Grid</p>
-          </div>
-          <div class="item outline">
-            <p>Grid</p>
-          </div>
-        </div>
-        <blockquote>
-          Note There is no gap around the edge. You can specify two values to
-          change the row and column gaps.
         </blockquote>
       </section>
     </main>

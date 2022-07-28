@@ -52,7 +52,7 @@ body > .hero {
   color: #fff;
 }
 
-.content {
+.container {
   display: grid;
   grid-template-columns:
     minmax(1rem, 1fr)
@@ -60,7 +60,7 @@ body > .hero {
     minmax(1rem, 1fr);
 }
 
-.content > * {
+.container > * {
   grid-column: 2;
 }
 
@@ -77,12 +77,29 @@ section > .hero {
   font-size: 2rem;
 }
 
-section {
+section, section > header {
   margin-bottom: 5vmin;
 }
 
 section > :where(h2, h3, h4) {
   margin-top: 4em;
+}
+
+details {
+  margin-block: 2rem;
+}
+
+summary {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+summary > * {
+  display: inline;
+}
+
+details > .content {
+  margin-block: 2rem;
 }
 
 .flex {
