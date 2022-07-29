@@ -48,6 +48,10 @@ body > .hero {
   background-color: #000;
 }
 
+.hero h1 {
+  letter-spacing: 100px;
+}
+
 .hero :where(h1, h2) {
   color: #fff;
 }
