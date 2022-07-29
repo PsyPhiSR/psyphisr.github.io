@@ -50,6 +50,7 @@ body > .hero {
 
 .hero h1 {
   letter-spacing: 100px;
+  transform: translateX(50px);
 }
 
 .hero :where(h1, h2) {
