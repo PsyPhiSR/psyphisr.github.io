@@ -17,8 +17,13 @@ body {
   line-height: 1.5;
 }
 
-p {
+p, caption {
   font-weight: 400;
+  max-width: 80ch;
+}
+
+code {
+  white-space: nowrap;
 }
 
 a {
@@ -34,9 +39,9 @@ blockquote {
   position: relative;
   display: grid;
   place-items: center;
-  height: 50vh;
+  height: 60vh;
   width: 100vw;
-  font-size: 4em;
+  font-size: 6em;
   background-image: 
     url("../images/building.jpg");
   background-size: cover;
@@ -44,8 +49,15 @@ blockquote {
 }
 
 .hero h1 {
+  margin-block: 0;
+  text-transform: uppercase;
+  letter-spacing: -.08em;
   flex-grow: 1;
   color: #fff;
+}
+
+.hero h1 div {
+  transform: translate(48%, -50%);
 }
 
 main {
@@ -55,11 +67,6 @@ main {
 section {
   margin-block: 10vmin;
   padding-inline: 2rem;
-}
-
-.flex {
-  display: flex;
-  min-height: 20vmin;
 }
 
 .outline {
@@ -82,9 +89,19 @@ section {
   font-size: 2em;
 }
 
+.flex {
+  display: flex;
+  min-width: 10vmin;
+}
+
 .grid {
-  min-height: 20vmin;
+  min-height: 5vmin;
+  min-width: 5vmin;
   display: grid;
+}
+
+.grid-auto-flow-column {
+  grid-auto-flow: column;
 }
 
 .gap {
@@ -103,9 +120,72 @@ section {
   font-size: 1.5em;
 }
 
-main > article {
+.example {
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
   overflow: auto;
   position: relative;
   resize: both;
+}
+
+.fix33>* {
+  flex-basis: 33%;
+}
+.fix50>* {
+  flex-basis: 50%;
+}
+.fix20rem>* {
+  flex: 0 0 20rem;
+}
+
+.blobs {
+  padding: 0;
+  list-style-type: none;
+  gap: .25rem 1rem;
+}
+.blobs>* {
+  border-radius: 1rem;
+  background-color: #eee;
+  padding: .25rem .5rem;
+}
+
+.wide {
+  min-width: 10rem;
+} 
+
+table, th, td {
+  border: 1px solid #000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+
+th {
+  font-size: 1.5rem;
+  background-color: #04AA6D;
+  color: white;
+}
+
+th, td {
+  padding-block:calc(var(--padding) / 2);
+  padding-inline: var(--padding);
+  text-align: left;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.container {
+  container-type: inline-size;
+}
+
+.container-3-columns {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@container (min-width: 60rem) {
+  .container-3-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

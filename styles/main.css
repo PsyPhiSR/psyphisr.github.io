@@ -164,6 +164,28 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: stack;
 }
 
+.grid-container {
+  grid-template-columns: minmax(var(--padding), 1fr) min(var(--max-content-width), 100% - 2 * var(--padding)) minmax(var(--padding), 1fr);
+}
+.grid-container > * {
+  grid-column: 2;
+}
+.grid-container .full-width {
+  width: 100%;
+  grid-column: 1/-1;
+}
+
+.grid-container-offset-left {
+  grid-template-columns: minmax(var(--padding), 2fr) min(var(--max-content-width), 100% - 2 * var(--padding)) minmax(var(--padding), 1fr);
+}
+.grid-container-offset-left > * {
+  grid-column: 2;
+}
+.grid-container-offset-left .full-width {
+  width: 100%;
+  grid-column: 1/-1;
+}
+
 :root {
   --grid-2-columns: 1;
   --grid-3-columns: 1;
@@ -245,6 +267,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .mia {
   margin-inline: auto;
+}
+
+.mt {
+  margin-top: var(--margin);
 }
 
 .p {

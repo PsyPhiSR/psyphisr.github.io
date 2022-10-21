@@ -22,6 +22,10 @@
   margin-inline: auto;
 }
 
+.mt {
+  margin-top: var(--margin);
+}
+
 .p {
   padding: var(--padding);
 }

@@ -12,75 +12,491 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../../styles/main.css" />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header class="hero">
       <a href="../index.html">
-        <h1>Grids</h1>
+        <h1>
+          Gr
+          <div>ids</div>
+        </h1>
       </a>
     </header>
     <main class="mbl">
-    <article class="mbl p grid-3-columns gap">
-      <div class="card">3-columns</div>
-      <div class="card">3-columns</div>
-      <div class="card">3-columns</div>
-      <div class="card span-3">span 3</div>
-      <div class="card span-2">span 2</div>
-      <div class="card">3-columns</div>
-      <div class="card">3-columns</div>
-      <div class="card span-2">span 2</div>
-    </article>
-    <article class="mbl p grid-4-columns gap">
-      <div class="card span-4">span 4</div>
-      <div class="card span-2">span 2</div>
-      <div class="card span-2">span 2</div>
-      <div class="card span-2">span 2</div>
-      <div class="card">4-columns</div>
-      <div class="card">4-columns</div>
-      <div class="card">4-columns</div>
-      <div class="card span-2">span 2</div>
-      <div class="card">4-columns</div>
-      <div class="card">4-columns</div>
-      <div class="card">4-columns</div>
-      <div class="card span-2">span 2</div>
-      <div class="card span-3">span 3</div>
-      <div class="card">4-columns</div>
-      <div class="card">4-columns</div>
-      <div class="card span-3">span 3</div>
-    </article>
-    <article class="mbl p grid-auto-columns gap">
-      <div class="card">auto 3 columns</div>
-      <div class="card">auto 3 columns</div>
-      <div class="card">auto 3 columns</div>
-    </article>
-    <article class="mbl p grid-auto-columns gap">
-      <div class="card">auto 4 columns</div>
-      <div class="card">auto 4 columns</div>
-      <div class="card">auto 4 columns</div>
-      <div class="card">auto 4 columns</div>
-    </article>
-    <article class="mbl p flex-gap flex-wrap">
-      <div class="card">1</div>
-      <div class="card">2</div>
-      <div class="card">3</div>
-      <div class="card">4</div>
-      <div class="card">5</div>
-    </article>
-    <article class="mbl p flex-gap flex-wrap flex-columns">
-      <div class="card">1</div>
-      <div class="card">2</div>
-      <div class="card">3</div>
-      <div class="card">4</div>
-      <div class="card">5</div>
-    </article>
-    <article class="mbl p flex-gap flex-wrap flex-pancake">
-      <div class="card">1</div>
-      <div class="card">2</div>
-      <div class="card">3</div>
-      <div class="card">4</div>
-      <div class="card">5</div>
-    </article>
-  </main>
+      <article class="mbl">
+        <section>
+          <h2>Introduction</h2>
+          <p>In this session we explore the fundamental question...</p>
+          <blockquote>Should I use Grid or Flexbox?</blockquote>
+          <p>we will also explore the question...</p>
+          <blockquote>Do we need both?</blockquote>
+          <p>
+            We will look at the main differences between the two, and what might
+            influence which one you choose (hint we do need both). Let's start
+            with a quick recap on the two techniques.
+          </p>
+          <p>
+            All of the red boxes below have a few additional props.<br />
+            <code>
+              min-height: 5vmin;<br />
+              min-width: 5vmin; </code
+            ><br />
+            The container div also has <code>padding: 2rem</code> applied to it.
+          </p>
+          <p>
+            Most of the examples below are a container div with three child
+            divs, unless overwise stated. I am using red outlines to show the
+            outlines of the divs, ignore the thicker lines it's just where two
+            outlines are next to each other and has no significances.
+          </p>
+          <p>
+            This session will only look at even columns examples, see the
+            details on the Space session to make columns that have difference
+            proportions.
+          </p>
+        </section>
+        <section>
+          <h2>Grid</h2>
+          <p>
+            To use grid all you need is a <code>div</code> with
+            <code>display: grid;</code>
+          </p>
+          <div class="grid outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <caption>
+            Note that the default is for the divs to stack in a column and are
+            the full width of the container.
+          </caption>
+          <p>
+            To dynamically make multiple columns we can add the following to the
+            container.<br />
+            <code> grid-auto-flow: column;<br /> </code>
+          </p>
+          <div class="grid-auto-flow-column outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <caption>
+            Note by default each
+            <code>div</code>
+            will fill an equal fraction of the space available. Just as if the
+            with had been fixed at
+            <code>1fr</code
+            >.
+          </caption>
+          <p>
+            We can also use <code>grid-template-columns: 1fr 1fr 1fr;</code> to
+            set the number of columns. The key word here is <b><i>set</i></b> as
+            it stops being dynamic.
+          </p>
+          <div class="grid-3-columns outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <caption>
+            Note with three child divs this looks exactly the same as the
+            <code>grid-auto-flow: column;</code>
+            example above.
+          </caption>
+          <div class="grid-auto-flow-column outline p mt">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <div class="grid-3-columns outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <caption>
+            Note that if we repeat the two examples for auto and template but
+            with only two child divs we can see that the
+            <code>grid-auto-flow: column;</code>
+            example expands to fill the container but template leaves a space at
+            the end.
+          </caption>
+        </section>
+        <section>
+          <h2>Flexbox</h2>
+          <p>
+            To use flexbox all you need is a <code>div</code> with
+            <code>display: flex;</code>
+          </p>
+          <div class="flex outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <caption>
+            Note that the default is for the divs to line up in a single row and
+            shrink to fit their contents.
+          </caption>
+          <p>
+            We can add
+            <code> flex-grow: 1; </code>
+            to each child to make them expand to the full width and it now looks
+            the same as
+            <code>grid-auto-flow: column;</code>
+            above. It behaves the same way when there are only two columns.
+            However, there is not an easy way to shrink it to make a space of
+            equal proportion as we did in the grid template example.
+            <i>
+              Yes you use percentages, but see the Space session to find why
+              this might be a bad idea.
+            </i>
+          </p>
+          <div class="flex-columns outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <div class="flex-columns outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <p>
+            We can add
+            <code> flex-direction: column; </code>
+            to the container to switch to a column.
+          </p>
+          <div class="flex columns outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <caption>
+            Note that each of the divs now expands to the full width of the
+            container.
+          </caption>
+        </section>
+        <section>
+          <h2>Differences In One Dimension</h2>
+          <p>
+            So far, we have only looked at a container with either a single row
+            or column of children, but we can already seen that there are
+            differences between grid and flexbox.
+          </p>
+          <p>
+            The main differences are the default direction, how the children are
+            sized and where the layout definition is placed.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Differences</th>
+                <th>Grid</th>
+                <th>Flexbox</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Default Direction</td>
+                <td>Column</td>
+                <td>Row</td>
+              </tr>
+              <tr>
+                <td>Child width<br />(when in rows)<super>*</super></td>
+                <td>Controlled by template</td>
+                <td>Shrinks to fit content<super>**</super></td>
+              </tr>
+              <tr>
+                <td>Layout definition</td>
+                <td>Container</td>
+                <td>Children</td>
+              </tr>
+            </tbody>
+          </table>
+          <caption>
+            <super>*</super>
+            Note when in columns both grid and flexbox child width defaults to
+            full width of the container.<br />
+            <super>**</super>
+            You can add
+            <code>flex-grow: 1;</code>
+            use a fraction of the space the same as grids
+            <code>1fr</code
+            >.
+          </caption>
+        </section>
+        <section>
+          <h2>Two Dimensions</h2>
+          <p>Lets look at the two techniques when we have more than one row.</p>
+          <p>
+            Most of the examples below are a container div with five child devs,
+            with the prefered arrangement of three even columns.
+          </p>
+        </section>
+        <section>
+          <h2>Multi-Row Grids</h2>
+          <p>
+            To make the grid multiple rows we can use
+            <code>grid-template-columns</code>
+            as we did above.
+          </p>
+          <div class="grid-3-columns outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+        </section>
+        <section>
+          <h2>Multi-Row Flexbox</h2>
+          <p>
+            This is where we see a big difference between grid and flexbox.
+            Flexbox is inheritly one dimensional, this does not mean that it
+            will not go onto multiple rows, just that you have less control.
+          </p>
+          <p>
+            We must add
+            <code>flex-wrap: wrap;</code>
+            to make the flexbox flow over to multiple rows. We must also fix the
+            width of the children, otherwise, flexbox will try to fit them into
+            a single row.
+          </p>
+          <div class="flex-wrap fix33 outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <caption>
+            Ah!! I used percentages. It's a hack, but it is not quite the same
+            as the
+            <code>grid-template-columns</code>
+            example above. However, 50% or 25% maybe useful sometimes.
+          </caption>
+          <div class="flex-wrap fix50 outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+          <p>Or you can give the children a fixed width.</p>
+          <div class="flex-wrap fix20rem outline p">
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+            <div class="grid outline"></div>
+          </div>
+        </section>
+        <section>
+          <h2>Initial Conclusion</h2>
+          <p>
+            So all this might suggest that it doesn't really matter which one
+            you choose if you have a single row (it doesn't matter!). Or that
+            grid is just a better tool as it is more predictable.
+          </p>
+          <p>
+            However, there are circumstances where one option is better than the
+            other. So let us look at them.
+          </p>
+        </section>
+        <section>
+          <h2>Grid - The King of Page Layout</h2>
+          <p>
+            We can use this css to create a centered column for content with an
+            even border either side. This setup does not require a media query
+            to work on mobile, when the screen is small enough the minimum
+            <code>--padding</code> kicks in to leave a nice centered column in
+            the middle.
+            <br />
+            <code>
+              grid-template-columns:<br />
+              &emsp;minmax(var(--padding), 1fr) //gutter <br />
+              &emsp;min(var(--max-content-width), (100% - (2 * var(--padding))))
+              <br />
+              &emsp;minmax(var(--padding), 1fr); //gutter <br />
+              > * {<br />
+              &emsp;grid-column: 2;<br />
+              }<br />
+            </code>
+          </p>
+
+          <div class="grid-container outline">
+            <div class="grid outline">Content goes here</div>
+          </div>
+          <div class="mbl example">
+            <div class="grid-container">
+              <div class="grid">
+                <h2>Content goes here</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatibus cupiditate sequi, minus quasi a est accusamus
+                  fuga impedit laudantium recusandae temporibus facere quidem
+                  expedita doloribus sint reprehenderit culpa similique debitis!
+                </p>
+              </div>
+            </div>
+          </div>
+          <p>
+            You can adjust the gutters to offset the content which might make
+            the page more interesting.
+          </p>
+          <div class="mbl example">
+            <div class="grid-container-offset-left">
+              <div class="grid">
+                <h2>Content goes here</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatibus cupiditate sequi, minus quasi a est accusamus
+                  fuga impedit laudantium recusandae temporibus facere quidem
+                  expedita doloribus sint reprehenderit culpa similique debitis!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Flexbox - Lists and Links</h2>
+          <p>
+            The flexbox is the perfect way to handle a dynamic list of items,
+            below is an example. Image that the user can click on a list
+            elsewhere to add each item to this list and can click on the items
+            here to remove them.
+          </p>
+          <p>
+            As we don't know how many the user will select we need a flexible
+            way to handle the interaction.
+          </p>
+          <div class="mbl example">
+            <ul class="flex-wrap centered blobs">
+              <li>Apples</li>
+              <li>Pears</li>
+              <li>Bananas</li>
+              <li>Plums</li>
+              <li>Lemons</li>
+              <li>Strawberries</li>
+              <li>Oranges</li>
+              <li>Limes</li>
+              <li>Grapefruit</li>
+              <li>Blackberries</li>
+              <li>Melons</li>
+              <li>Pomegranate</li>
+            </ul>
+          </div>
+        </section>
+
+        <h2>Grid Examples</h2>
+        <p>
+          Below is a whole series of examples using grid. There is only one
+          media query that switches the number of columns at a set breakpoint.
+        </p>
+        <section class="mbl p grid-3-columns gap example">
+          <div class="card">3-col</div>
+          <div class="card">3-col</div>
+          <div class="card">3-col</div>
+          <div class="card span-3">span 3</div>
+          <div class="card span-2">span 2</div>
+          <div class="card">3-col</div>
+          <div class="card">3-col</div>
+          <div class="card span-2">span 2</div>
+        </section>
+        <section class="mbl p grid-4-columns gap example">
+          <div class="card span-4">span 4</div>
+          <div class="card span-2">span 2</div>
+          <div class="card span-2">span 2</div>
+          <div class="card span-2">span 2</div>
+          <div class="card">4-col</div>
+          <div class="card">4-col</div>
+          <div class="card">4-col</div>
+          <div class="card span-2">span 2</div>
+          <div class="card">4-col</div>
+          <div class="card">4-col</div>
+          <div class="card">4-col</div>
+          <div class="card span-2">span 2</div>
+          <div class="card span-3">span 3</div>
+          <div class="card">4-col</div>
+          <div class="card">4-col</div>
+          <div class="card span-3">span 3</div>
+        </section>
+        <section class="mbl p grid-auto-columns gap example">
+          <div class="card">auto 3 col</div>
+          <div class="card">auto 3 col</div>
+          <div class="card">auto 3 col</div>
+        </section>
+        <section class="mbl p grid-auto-columns gap example">
+          <div class="card">auto 4 col</div>
+          <div class="card">auto 4 col</div>
+          <div class="card">auto 4 col</div>
+          <div class="card">auto 4 col</div>
+        </section>
+        <h2>Flexbox Examples</h2>
+        <p>
+          One problem with flexbox is that most of the definition needs to go on
+          the children, to combat this we can write rules like this (this is the
+          css for the third example below).
+        </p>
+        <code>
+          .flex-pancake>* {<br />
+          &emsp;flex: 1 1 var(--flex-coumn-width);<br />
+          }
+        </code>
+        <p>
+          For this first example each div has a fixed width. If the container
+          can accommodate all of the divs, they will go on one row. Otherwise,
+          the extra div will drop to the next row.
+        </p>
+        <p>
+          Note the behaviour is that same as the Grid example with a fixed
+          number of columns. But in the grid example the divs expand to the fill
+          the whole width of the container, with the dropped div matching the
+          width of the other divs.
+        </p>
+
+        <section class="mbl p flex-gap flex-wrap example">
+          <div class="card wide">1</div>
+          <div class="card wide">2</div>
+          <div class="card wide">3</div>
+          <div class="card wide">4</div>
+          <div class="card wide">5</div>
+        </section>
+        <p>
+          The next two examples show two different ways to handle multiple rows.
+          In the first we set a breakpoint target width, if the container
+          <super>*</super>
+          is large than this width, the divs are displayed as columns, but below
+          the width, it switches to columns.
+        </p>
+        <p>
+          <super>*</super> note there is no media query here, it is controlled
+          by the width of the container not the viewport width
+        </p>
+        <section class="mbl p flex-gap flex-wrap flex-columns example">
+          <div class="card">1</div>
+          <div class="card">2</div>
+          <div class="card">3</div>
+          <div class="card">4</div>
+          <div class="card">5</div>
+        </section>
+        <p>
+          In the second example, each div has been given a minimum width, if the
+          container is wide enough to contain all of the divs with at least
+          their minimum width, then there are displayed in a single row. As soon
+          as the container is too small, the last div is dropped to the next row
+          and grow to fill the available space.
+        </p>
+        <p>
+          There is a design decision here, with flexbox the dropped div is
+          bigger than the rest, and may be perceived as more important, this may
+          not be what you want.
+        </p>
+        <section class="mbl p flex-gap flex-wrap flex-pancake example">
+          <div class="card">1</div>
+          <div class="card">2</div>
+          <div class="card">3</div>
+          <div class="card">4</div>
+          <div class="card">5</div>
+        </section>
+      </article>
+    </main>
   </body>
 </html>
