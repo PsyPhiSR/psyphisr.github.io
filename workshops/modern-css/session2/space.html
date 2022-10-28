@@ -252,6 +252,8 @@
               architecto suscipit?
             </p>
           </div>
+        </div>
+        <div class="flex gap wrap">
           <h3>Letting the browser do it with column-width</h3>
           <div
             class="resize"
@@ -392,6 +394,70 @@
           <h4>Max content</h4>
           <div class="outline" style="width: max-content">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <h3 class="new-content">Recent changes</h3>
+        <h4>Container Query and Units</h4>
+        <p>
+          To create a container add<br />
+          <code>container-type: size;</code> 
+          <br />or<br />
+          <code>container-type: inline-size;</code>
+          <br /> 
+          Note that keyword linting is not working currently in VS code, so it
+          will show with a yellow squiggle under <code>container-type</code>.
+        </p>
+        <p>
+          You can also name a container with<br />
+          <code>container-name: name;</code> &lt;-- note no quotes on this<br />
+          However, I have not found a solid example of why you need this.
+        </p>
+        <p>
+          If you change <code>vh</code> to <code>cqh</code> you get a unit that
+          responses to the closest container.
+        </p>
+        <div class="flex resize" style="container-type: size; height: 400px">
+          <div class="item outline sideways" style="width: 10cqw">
+            <p>10cqw</p>
+          </div>
+          <div class="item outline sideways" style="width: 10cqh">
+            <p>10cqh</p>
+          </div>
+          <div class="item outline sideways" style="width: 10cqi">
+            <p>10cqi</p>
+          </div>
+          <div class="item outline sideways" style="width: 10cqb">
+            <p>10cqb</p>
+          </div>
+          <div class="item outline sideways" style="width: 10cqmin">
+            <p>10cqmin</p>
+          </div>
+          <div class="item outline sideways" style="width: 10cqmax">
+            <p>10cqmax</p>
+          </div>
+        </div>
+        <h5>Media Query (not a container)</h5>
+        <div class="not-container-example resize">
+          <div class="container narrow outline">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="container medium outline">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="container wide outline">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+        <h5>Container Query No media queries</h5>
+        <div class="container-example resize">
+          <div class="container narrow outline">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="container medium outline">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="container wide outline">
+            <p>Lorem ipsum dolor sit amet.</p>
           </div>
         </div>
         <h3>Future units</h3>

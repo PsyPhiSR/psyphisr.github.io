@@ -57,7 +57,7 @@ body > .hero {
   color: #fff;
 }
 
-.container {
+section.container {
   display: grid;
   grid-template-columns:
     minmax(1rem, 1fr)
@@ -65,11 +65,11 @@ body > .hero {
     minmax(1rem, 1fr);
 }
 
-.container > * {
+section.container > * {
   grid-column: 2;
 }
 
-.full-bleed {
+section>.full-bleed {
   width: 100%;
   grid-column: 1 / -1;
 }
@@ -203,4 +203,74 @@ footer {
   overflow: auto;
   position: relative;
   resize: both;
+}
+
+.new-content::after {
+  content: 'new';
+  color: red;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px black;
+  transform: rotateX(30deg);
+}
+
+[class*="container-example"] {
+  display: grid;
+  place-items: center;
+}
+
+.not-container-example {
+  margin-bottom: 2rem;
+}
+
+.container-example .container {
+  container-type: inline-size;
+}
+
+[class*="example"] {
+  width: 90vw;
+}
+
+[class*="example"] .container {
+  width: 100%;
+}
+
+[class*="example"] .container p {
+  background: cadetblue;
+  color: white;
+  width: 100%;
+}
+
+@media (min-width: 35rem) {
+  .not-container-example .container p {
+    background: lime;
+  }
+}
+
+@media (min-width: 55rem) {
+  .not-container-example .container p {
+    background: orangered;
+  }
+}
+
+@container (min-width: 35rem) {
+  .container-example .container p {
+    background: lime;
+  }
+}
+
+@container (min-width: 55rem) {
+  .container-example .container p {
+    background: orangered;
+  }
+}
+
+[class*="example"] .container.narrow {
+  max-width: 20rem;
+}
+[class*="example"] .container.medium {
+  max-width: 40rem;
+}
+[class*="example"] .container.wide {
+  max-width: 60rem;
 }
